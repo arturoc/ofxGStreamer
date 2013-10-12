@@ -13,19 +13,19 @@ This addon depends on the gstreamer SDK. To install it:
 
 You can download gstreamer v1.0. To install it under osx use the packages from (http://gstreamer.freedesktop.org/data/pkg/osx/1.0.8/)[http://gstreamer.freedesktop.org/data/pkg/osx/1.0.8/]
     
-    - gstreamer-1.0-1.0.8-universal.pkg installs the necesary libraries for applications to run
+    * gstreamer-1.0-1.0.8-universal.pkg installs the necesary libraries for applications to run
     
-    - gstreamer-1.0-devel-1.0.8-universal.pkg installs the development files needed to compile gst aplications
+    * gstreamer-1.0-devel-1.0.8-universal.pkg installs the development files needed to compile gst aplications
     
-    - gstreamer-1.0-1.0.8-universal-packages.dmg contains some additional packages that are needed to encode some formats like h264, some of this packages have GPL license or use patented formats. From those this package is needed to do colorspace conversion:
+    * gstreamer-1.0-1.0.8-universal-packages.dmg contains some additional packages that are needed to encode some formats like h264, some of this packages have GPL license or use patented formats. From those this package is needed to do colorspace conversion:
     
-        - gstreamer-1.0-libav-1.0.8-universal.pkg
+        * gstreamer-1.0-libav-1.0.8-universal.pkg
     
     And these will provide h264 encoding and some network utils to stream h264 and other formats
         
-        - gstreamer-1.0-codecs-restricted-1.0.8-universal.pkg
+        * gstreamer-1.0-codecs-restricted-1.0.8-universal.pkg
         
-        - gstreamer-1.0-net-restricted-1.0.8-universal.pkg
+        * gstreamer-1.0-net-restricted-1.0.8-universal.pkg
 
 If we only want to run an osx app. The devel package is not needed but by now we need to install the rest of packages
 
