@@ -33,7 +33,8 @@ common:
 	
 	# any special flag that should be passed to the compiler when using this
 	# addon
-	# ADDON_CFLAGS = 
+	ADDON_CFLAGS = -DOF_VIDEO_CAPTURE_GSTREAMER
+	ADDON_CFLAGS += -DOF_VIDEO_PLAYER_GSTREAMER 
 	
 	# any special flag that should be passed to the linker when using this
 	# addon, also used for system libraries with -lname
