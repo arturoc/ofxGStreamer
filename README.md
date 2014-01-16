@@ -31,7 +31,7 @@ If we only want to run an osx app. The devel package is not needed but by now we
 
 On some systems it seems it's necesary to remove or rename /Library/Frameworks/GStreamer/Headers/assert.h or it'll clash with the assert.h in the system and some projects won't compile. As far as i've tested it's safe to just delete it but it's probably better to keep a copy just in case.
 
-###windows
+###windows (only tested on visual studio)
 
 You can download gstreamer v1.0. To install it under windows use the packages from (http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/)[http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/] any later version from (http://gstreamer.freedesktop.org/data/pkg/windows)[http://gstreamer.freedesktop.org/data/pkg/windows] should work but haven't been tested
     
