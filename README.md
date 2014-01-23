@@ -1,9 +1,9 @@
 ofxGStreamer
 ============
 
-ofxGStreamer is part of a toolkit in development called OFStreamer, a set of openFrameworks addons deigned to make it easier to use GStreamer on OSX and Windows. The toolkit is being developed by [Arturo Castro](http://arturocastro.net/) and [Seth Hunter](http://www.perspectum.com/) for applications that require streaming video, audio and metadata between remote locations. 
+ofxGStreamer is part of a toolkit in development called OFStreamer, which is a set of openFrameworks addons deigned to make it easier to use GStreamer on OSX and Windows. The toolkit is being developed by [Arturo Castro](http://arturocastro.net/) and [Seth Hunter](http://www.perspectum.com/) for applications that require streaming video, audio and metadata between remote locations. 
 
-This addon has no code and instead uses the addon_config.mk file included here to add the required files from the core + the flags needed to compile programs using [GStreamer](http://gstreamer.freedesktop.org/).
+This addon has no code and instead uses the addon_config.mk file included here to add the required files from the core + the flags needed to compile programs using [GStreamer](http://gstreamer.freedesktop.org/). Please see [ofxGSTRTP](https://github.com/arturoc/ofxGSTRTP) for examples and implimentation of the toolkit. 
 
 The instructions below will only work with the latest version of the [project generator](https://github.com/ofZach/projectGeneratorSimple) on github. More information about getting OF setup is documented [here](https://github.com/openframeworks/openFrameworks/blob/master/docs/table_of_contents.md). Use the project generater to create template projects after you have installed the GStreamer libraries according to the instructions below.
 
