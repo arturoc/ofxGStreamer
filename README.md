@@ -19,7 +19,7 @@ First you need to download gstreamer v1.0. To install it under osx install each 
 
 * [gstreamer-1.0-devel-1.2.2-universal.pkg](http://gstreamer.freedesktop.org/data/pkg/osx/1.2.2/gstreamer-1.0-devel-1.2.2-universal.pkg) installs the development files needed to compile gst aplications
 
-* [gstreamer-1.0-1.2.2-universal-packages.dmg](http://gstreamer.freedesktop.org/data/pkg/osx/1.2.1/gstreamer-1.0-1.2.2-universal-packages.dmg) contains some additional packages that are needed to encode some formats like h264, some of these packages have GPL license or use patented formats. Download the dmg and install the following packages that collection:
+* [gstreamer-1.0-1.2.2-universal-packages.dmg](http://gstreamer.freedesktop.org/data/pkg/osx/1.2.2/gstreamer-1.0-1.2.2-universal-packages.dmg) contains some additional packages that are needed to encode some formats like h264, some of these packages have GPL license or use patented formats. Download the dmg and install the following packages that collection:
 
 This package is needed to do colorspace conversion:
 
