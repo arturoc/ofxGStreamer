@@ -115,6 +115,8 @@ osx:
 	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.cpp
 	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.h
 	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.cpp
+	ADDON_SOURCES += src/ofxGStreamer.h
+	ADDON_SOURCES += src/ofxGStreamer.cpp
     
 ios:
 	ADDON_LDFLAGS = -F/Library/Frameworks -framework GStreamer
