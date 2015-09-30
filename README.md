@@ -17,7 +17,7 @@ First you need to download gstreamer v1.0. To install it under osx install each 
     
 * [gstreamer-1.0-1.2.1-universal.pkg](http://gstreamer.freedesktop.org/data/pkg/osx/1.2.1/gstreamer-1.0-1.2.1-universal.pkg) installs the necesary libraries for applications to run
 
-* [gstreamer-1.0-devel-1.2.1-universal.pkg](http://gstreamer.freedesktop.org/data/pkg/osx/1.2.1/gstreamer-1.0-devel-1.2.1-universal.pkg) installs the development files needed to compile gst aplications
+* [gstreamer-1.0-devel-1.2.1-universal.pkg](http://gstreamer.freedesktop.org/data/pkg/osx/1.2.1/gstreamer-1.0-devel-1.2.1-universal.pkg) installs the development files needed to compile gst applications
 
 * [gstreamer-1.0-1.2.1-universal-packages.dmg](http://gstreamer.freedesktop.org/data/pkg/osx/1.2.1/gstreamer-1.0-1.2.1-universal-packages.dmg) contains some additional packages that are needed to encode some formats like h264, some of these packages have GPL license or use patented formats. Download the dmg and install the following packages from that collection:
 
@@ -45,7 +45,7 @@ You need to download GStreamer v1.0. To install it under windows use the 1.2.2 p
     
 * [gstreamer-1.0-x86-1.2.2.msi](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/gstreamer-1.0-x86-1.2.2.msi) installs the necesary libraries for applications to run.
 
-* [gstreamer-1.0-devel-x86-1.2.2.msi](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/gstreamer-1.0-devel-x86-1.2.2.msi) installs the development files needed to compile gst aplications.
+* [gstreamer-1.0-devel-x86-1.2.2.msi](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/gstreamer-1.0-devel-x86-1.2.2.msi) installs the development files needed to compile gst applications.
 
 After installing those 2 packages, you need to add the path to the bin directory of the installation to the PATH environment variable. In windows 8 open the control panel and search for environment variable. In windows 7 type "environment variable" into the run window. Edit the system PATH variable and at the end by adding a ; and the bin folder in the path where you installed gstreamer. The default path should be:
 
