@@ -101,12 +101,12 @@ install:
     else
         scripts/$TARGET/download_libs.sh;
     fi
-  - if [ "$TARGET" == "osx" ]; then
-        wget https://gstreamer.freedesktop.org/data/pkg/osx/1.9.90/gstreamer-1.0-devel-1.9.90-x86_64.pkg;
-        sudo installer -pkg gstreamer-1.0-devel-1.9.90-x86_64.pkg -target /;
-        wget https://gstreamer.freedesktop.org/data/pkg/osx/1.9.90/gstreamer-1.0-1.9.90-x86_64.pkg;
-        sudo installer -pkg gstreamer-1.0-1.9.90-x86_64.pkg -target /;
-        ls /Library/Frameworks/GStreamer.framework/Headers;
+  - cd $TRAVIS_BUILD_DIR
+  - if [ -f scripts/ci/install.sh ]; then
+        scripts/ci/install.sh;
+    fi
+  - if [ -f scripts/ci/$TARGET/install.sh ]; then
+        scripts/ci/$TARGET/install.sh;
     fi
 
 
