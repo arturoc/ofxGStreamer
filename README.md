@@ -1,7 +1,7 @@
 ofxGStreamer
 ============
 
-https://travis-ci.org/arturoc/ofxGStreamer.svg?branch=master
+[![Build status](https://travis-ci.org/arturoc/ofxGStreamer.svg?branch=master)](https://travis-ci.org/arturoc/ofxGStreamer)
 
 ofxGStreamer is an special addon that allows to use the openFrameworks GStreamer elements, ofGstVideoPlayer and ofGstUtils under windows and osx
 
