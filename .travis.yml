@@ -110,9 +110,9 @@ script:
   - cd ~
   - mv $TRAVIS_BUILD_DIR ~/openFrameworks/addons/
   - cd ~/openFrameworks/addons/$(basename $TRAVIS_BUILD_DIR)
-  - for example in $(ls example*); do
-        cp ~/openFrameworks/scripts/linux/Makefile $example/;
-        cp ~/openFrameworks/scripts/linux/config.make $example/;
+  - for example in example*; do
+        cp ~/openFrameworks/scripts/templates/$TARGET/Makefile $example/;
+        cp ~/openFrameworks/scripts/templates/$TARGET/config.make $example/;
         cd $example;
         if [ "$TARGET" == "android" ]; then
             echo "ABIS_TO_COMPILE_DEBUG = $OPT" >> config.make;
