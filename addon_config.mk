@@ -80,12 +80,12 @@ win_cb:
 	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86)include/gstreamer-1.0
 	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86)include/glib-2.0
 	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86)lib/glib-2.0/include
-	ADDON_SOURCES = ../../../libs/openFrameworks/video/ofGstUtils.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstUtils.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.cpp
 	ADDON_LDFLAGS += -L$(GSTREAMER_1_0_ROOT_X86)lib -lgstreamer-1.0 -lgstapp-1.0 -lgstvideo-1.0 -lgstbase-1.0 -lgstnet-1.0 -lgstaudio-1.0 -lgio-2.0 -lpangowin32-1.0 -lgdi32 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lpango-1.0 -lcairo -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lffi -lws2_32 -lole32 -lwinmm -lshlwapi  -lintl -lglib-2.0
 
 	
@@ -94,12 +94,12 @@ vs:
 	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86)include/gstreamer-1.0
 	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86)include/glib-2.0
 	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86)lib/glib-2.0/include
-	ADDON_SOURCES = ../../../libs/openFrameworks/video/ofGstUtils.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstUtils.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.cpp
 	ADDON_LIBS += $(GSTREAMER_1_0_ROOT_X86)lib/gstreamer-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gstapp-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gstvideo-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gstbase-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gstnet-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gstaudio-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gio-2.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/pangowin32-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gdi32.lib $(GSTREAMER_1_0_ROOT_X86)lib/pangocairo-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gdk_pixbuf-2.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/pango-1.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/cairo.lib $(GSTREAMER_1_0_ROOT_X86)lib/gobject-2.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gmodule-2.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/gthread-2.0.lib $(GSTREAMER_1_0_ROOT_X86)lib/ffi.lib $(GSTREAMER_1_0_ROOT_X86)lib/ws2_32.lib $(GSTREAMER_1_0_ROOT_X86)lib/ole32.lib $(GSTREAMER_1_0_ROOT_X86)lib/winmm.lib $(GSTREAMER_1_0_ROOT_X86)lib/shlwapi.lib $(GSTREAMER_1_0_ROOT_X86)lib/intl.lib $(GSTREAMER_1_0_ROOT_X86)lib/glib-2.0.lib
 	
 android/armeabi:	
@@ -109,24 +109,22 @@ android/armeabi-v7a:
 osx:
 	ADDON_LDFLAGS = -F/Library/Frameworks -framework GStreamer
 	ADDON_INCLUDES = /Library/Frameworks/GStreamer.framework/Headers
-	ADDON_SOURCES = ../../../libs/openFrameworks/video/ofGstUtils.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstUtils.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.cpp
-	ADDON_SOURCES += src/ofxGStreamer.h
-	ADDON_SOURCES += src/ofxGStreamer.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.cpp
     
 ios:
 	ADDON_LDFLAGS = -F/Library/Frameworks -framework GStreamer
 	ADDON_INCLUDES = /Library/Frameworks/GStreamer.framework/Headers
-	ADDON_SOURCES = ../../../libs/openFrameworks/video/ofGstUtils.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstUtils.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoPlayer.cpp
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.h
-	ADDON_SOURCES += ../../../libs/openFrameworks/video/ofGstVideoGrabber.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.cpp
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.h
+	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.cpp
 	
 	
 
