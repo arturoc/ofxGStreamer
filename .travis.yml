@@ -101,6 +101,9 @@ install:
     else
         scripts/$TARGET/download_libs.sh;
     fi
+  - if [ "$TARGET" == "osx" ]; then
+        brew install gstreamer
+    fi
 
 
 script:
