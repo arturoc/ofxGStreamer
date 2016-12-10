@@ -102,7 +102,7 @@ install:
         scripts/$TARGET/download_libs.sh;
     fi
   - if [ "$TARGET" == "osx" ]; then
-        brew install gstreamer
+        brew install gstreamer;
     fi
 
 
