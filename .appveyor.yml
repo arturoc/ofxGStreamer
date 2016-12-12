@@ -62,6 +62,7 @@ install:
 - if "%BUILDER%"=="MSYS2" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\msys2\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/msys2/install.sh" ) )
 
 build_script:
+- set GSTREAMER_1_0_ROOT_X86_64=C:\gstreamer\1.0\x86_64\
 - if "%BUILDER%"=="MSYS2" (    
     for /D %%e in (addons\%APPVEYOR_PROJECT_NAME%\example*) do (
         %MSYS2_PATH%\usr\bin\bash -lc "make -C addons/%APPVEYOR_PROJECT_NAME%/%%~ne Debug"
@@ -70,7 +71,6 @@ build_script:
 
 - if "%BUILDER%"=="VS" (
     msbuild libs/openFrameworksCompiled/project/vs/openframeworksLib.vcxproj  /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" &&
-    set GSTREAMER_1_0_ROOT_X86_64=C:\gstreamer\1.0\x86_64\ &&
     for /D %%e in (addons\%APPVEYOR_PROJECT_NAME%\example*) do (
         msbuild %%e/%%~ne.vcxproj  /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
     )
