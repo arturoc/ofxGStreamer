@@ -76,10 +76,10 @@ linuxarmv6l:
 linuxarmv7l:
 	
 msys2:
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include/gstreamer-1.0
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include/glib-2.0
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)lib/glib-2.0/include
+	#ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include
+	#ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include/gstreamer-1.0
+	#ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include/glib-2.0
+	#ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)lib/glib-2.0/include
 	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.h
 	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.cpp
 	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.h
