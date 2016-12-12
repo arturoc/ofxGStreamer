@@ -45,7 +45,8 @@ install:
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "wget http://ci.openframeworks.cc/projectGenerator/projectGenerator-vs.zip 2> /dev/null")
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "unzip projectGenerator-vs.zip 2> /dev/null")
 - if "%BUILDER%"=="VS" (rm projectGenerator-vs.zip)
-- if "%BUILDER%"=="VS" (projectGenerator.exe addons\%APPVEYOR_PROJECT_NAME%\example)
+- if "%BUILDER%"=="VS" ( set GSTREAMER_1_0_ROOT_X86_64=C:\gstreamer\1.0\x86_64\ )
+- if "%BUILDER%"=="VS" ( dir %GSTREAMER_1_0_ROOT_X86_64% )
 - if "%BUILDER%"=="VS" (projectGenerator.exe addons\%APPVEYOR_PROJECT_NAME%\example)
 - if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh" ) )
 - if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ) )
@@ -67,8 +68,6 @@ build_script:
         %MSYS2_PATH%\usr\bin\bash -lc "make -C addons/%APPVEYOR_PROJECT_NAME%/%%~ne Debug"
     )
   )
-- if "%BUILDER%"=="VS" ( set GSTREAMER_1_0_ROOT_X86_64=C:\gstreamer\1.0\x86_64\ )
-- if "%BUILDER%"=="VS" ( dir %GSTREAMER_1_0_ROOT_X86_64% )
 - if "%BUILDER%"=="VS" (
     msbuild libs/openFrameworksCompiled/project/vs/openframeworksLib.vcxproj  /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" &&
     for /D %%e in (addons\%APPVEYOR_PROJECT_NAME%\example*) do (
