@@ -87,7 +87,7 @@ msys2:
 	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.h
 	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.cpp
 	#ADDON_LDFLAGS += -L$(GSTREAMER_1_0_ROOT_X86_64)lib -lgstreamer-1.0 -lgstapp-1.0 -lgstvideo-1.0 -lgstbase-1.0 -lgstnet-1.0 -lgstaudio-1.0 -lgio-2.0 -lpangowin32-1.0 -lgdi32 -lpangocairo-1.0 -lgdk_pixbuf-2.0 -lpango-1.0 -lcairo -lgobject-2.0 -lgmodule-2.0 -lgthread-2.0 -lffi -lws2_32 -lole32 -lwinmm -lshlwapi  -lintl -lglib-2.0
-    ADDON_PKG_CONFIG_LIBRARIES = gstreamer-1.0
+    ADDON_PKG_CONFIG_LIBRARIES = gstreamer-1.0 gstreamer-app-1.0 gstreamer-video-1.0
 
 	
 vs:
