@@ -4,6 +4,9 @@ wget https://gstreamer.freedesktop.org/data/pkg/windows/1.10.2/gstreamer-1.0-dev
 echo "Downloading https://gstreamer.freedesktop.org/data/pkg/windows/1.10.2/gstreamer-1.0-x86_64-1.10.2.msi"
 wget https://gstreamer.freedesktop.org/data/pkg/windows/1.10.2/gstreamer-1.0-x86_64-1.10.2.msi 2> /dev/null
 echo "Installing gstreamer-1.0-devel-x86_64-1.10.2.msi"
-msiexec /i gstreamer-1.0-devel-x86_64-1.10.2.msi /quiet /passive
+cmd /c "msiexec /L* install_devel.log /i gstreamer-1.0-devel-x86_64-1.10.2.msi /quiet"
+cat install_devel.log
 echo "Installing gstreamer-1.0-x86_64-1.10.2.msi"
-msiexec /i gstreamer-1.0-x86_64-1.10.2.msi /quiet /passive
+cmd /c "msiexec /L* install.log /i gstreamer-1.0-x86_64-1.10.2.msi /quiet"
+cat install.log
+
