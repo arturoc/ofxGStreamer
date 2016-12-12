@@ -48,9 +48,9 @@ install:
 - if "%BUILDER%"=="VS" (rm projectGenerator-vs.zip)
 - if "%BUILDER%"=="VS" (projectGenerator.exe addons\%APPVEYOR_PROJECT_NAME%\example)
 - if "%BUILDER%"=="VS" (projectGenerator.exe addons\%APPVEYOR_PROJECT_NAME%\example)
-- if "%BUILDER%"=="VS" ( if /f addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh" ) )
-- if "%BUILDER%"=="VS" ( if /f addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ) )
-- if "%BUILDER%"=="VS" ( if /f addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps ) )
+- if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh" ) )
+- if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ) )
+- if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps ) )
 
 - if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/msys2/install_dependencies.sh --noconfirm")
 - if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/msys2/download_libs.sh 2> /dev/null")
@@ -60,7 +60,7 @@ install:
         copy scripts\templates\msys2\config.make %%e\config.make
     )
   )
-- if "%BUILDER%"=="MSYS2" ( if /f addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\msys2\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh" ) )
+- if "%BUILDER%"=="MSYS2" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\msys2\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh" ) )
 
 build_script:
 - if "%BUILDER%"=="MSYS2" (    
