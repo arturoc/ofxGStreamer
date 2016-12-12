@@ -29,7 +29,6 @@ init:
 - if "%BUILDER%_%PLATFORM%"=="MSYS2_x86" set MSYSTEM=MINGW32
 - if "%BUILDER%_%PLATFORM%"=="MSYS2_x64" set MSYSTEM=MINGW64
 
-#- if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "pacman --noconfirm -Syuu")
 - '%MSYS2_PATH%\usr\bin\bash -lc "pacman --noconfirm -S --needed unzip rsync"'
 
 - IF "%BUILDER%"=="VS" set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
@@ -45,7 +44,7 @@ install:
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/vs/download_libs.sh")
 - if "%BUILDER%"=="VS" (echo "Downloading projectGenerator from ci server")
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "wget http://ci.openframeworks.cc/projectGenerator/projectGenerator-vs.zip 2> /dev/null")
-- if "%BUILDER%"=="VS" (unzip projectGenerator-vs.zip 2> /dev/null)
+- if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "unzip projectGenerator-vs.zip 2> /dev/null")
 - if "%BUILDER%"=="VS" (rm projectGenerator-vs.zip)
 - if "%BUILDER%"=="VS" (projectGenerator.exe addons\%APPVEYOR_PROJECT_NAME%\example)
 
@@ -55,7 +54,7 @@ install:
 - if "%BUILDER%"=="MSYS2" (copy scripts\templates\msys2\config.make addons\%APPVEYOR_PROJECT_NAME%\example\config.make)
 
 build_script:
-- if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "make -C addons\$APPVEYOR_PROJECT_NAME\example Debug")
+- if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "make -C addons\%APPVEYOR_PROJECT_NAME%\example Debug")
 
 - ps: |
     if ($env:BUILDER -eq "VS") {
