@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pacman -S gstreamer1.0
+pacman -S gstreamer gst-plugins-base-libs gst-plugins-base gst-plugins-good
