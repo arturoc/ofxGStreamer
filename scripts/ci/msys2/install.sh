@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-pacman -S gstreamer gst-plugins-base-libs gst-plugins-base gst-plugins-good
+pacman -S mingw-w64-i686-gstreamer mingw-w64-i686-gst-plugins-base-libs mingw-w64-i686-gst-plugins-base mingw-w64-i686-gst-plugins-good
