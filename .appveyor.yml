@@ -32,8 +32,7 @@ init:
 - '%MSYS2_PATH%\usr\bin\bash -lc "pacman --noconfirm -S --needed unzip rsync"'
 
 - IF "%BUILDER%"=="VS" set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
-- set OF_ROOT=%APPVEYOR_BUILD_FOLDER%\..\openFrameworks
-- set PG_OF_PATH=%OF_ROOT%
+- set PG_OF_PATH=%APPVEYOR_BUILD_FOLDER%\..\openFrameworks
 
 install:
 - cd ..
