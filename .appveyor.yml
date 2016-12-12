@@ -50,7 +50,7 @@ install:
 
 - if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/msys2/install_dependencies.sh --noconfirm")
 - if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/msys2/download_libs.sh 2> /dev/null")
-- cmd: >-
+- |-
     if "%BUILDER%"=="MSYS2" (
         for /D %e in (addons\%APPVEYOR_PROJECT_NAME%\example*) do (
             copy scripts\templates\msys2\Makefile addons\%APPVEYOR_PROJECT_NAME%\%%e\Makefile
@@ -59,14 +59,14 @@ install:
     )
 
 build_script:
-- cmd: >-
+- |-
     if "%BUILDER%"=="MSYS2" (    
         for /D %e in (addons\%APPVEYOR_PROJECT_NAME%\example*) do (
             %MSYS2_PATH%\usr\bin\bash -lc "make -C addons/%APPVEYOR_PROJECT_NAME%/%%e Debug"
         )
     )
 
-- cmd: >-
+- |-
     if "%BUILDER%"=="VS" (
         msbuild libs/openFrameworksCompiled/project/vs/openframeworksLib.vcxproj  /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
         for /D %e in (addons\%APPVEYOR_PROJECT_NAME%\example*) do (
