@@ -1,0 +1,65 @@
+version: 1.0.{build}
+os: Visual Studio 2015 RC
+
+environment:
+  global:
+    APPVEYOR_OS_NAME: windows
+  matrix:
+  #MSYS2 Building
+    - platform: x86
+      BUILDER: MSYS2
+
+  #VisualStudio Building
+    - platform: x86
+      BUILDER : VS
+      BITS: 32
+    - platform: x64
+      BUILDER : VS
+      BITS: 64
+
+configuration: Debug
+shallow_clone: true
+clone_depth: 10
+
+init:
+- set MSYS2_PATH=c:\msys64
+- set CHERE_INVOKING=1
+#- '%MSYS2_PATH%\usr\bin\bash -lc "pacman --noconfirm -Sy pacman"'
+#- '%MSYS2_PATH%\usr\bin\bash -lc "pacman --noconfirm -Syuu"'
+- if "%BUILDER%_%PLATFORM%"=="MSYS2_x86" set MSYSTEM=MINGW32
+- if "%BUILDER%_%PLATFORM%"=="MSYS2_x64" set MSYSTEM=MINGW64
+
+#- if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "pacman --noconfirm -Syuu")
+- '%MSYS2_PATH%\usr\bin\bash -lc "pacman --noconfirm -S --needed unzip rsync"'
+
+- IF "%BUILDER%"=="VS" set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
+- set OF_ROOT=%APPVEYOR_BUILD_FOLDER%\..\openFrameworks
+- set PG_OF_PATH=%OF_ROOT%
+
+install:
+- cd ..
+- git clone --depth=1 --branch=master https://github.com/openframeworks/openFrameworks
+- move %APPVEYOR_PROJECT_NAME% openFrameworks\addons\%APPVEYOR_PROJECT_NAME%
+- cd openFrameworks
+
+- if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/vs/download_libs.sh")
+- if "%BUILDER%"=="VS" (echo "Downloading projectGenerator from ci server")
+- if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "wget http://ci.openframeworks.cc/projectGenerator/projectGenerator-vs.zip 2> /dev/null")
+- if "%BUILDER%"=="VS" (unzip projectGenerator-vs.zip 2> /dev/null)
+- if "%BUILDER%"=="VS" (rm projectGenerator-vs.zip)
+- if "%BUILDER%"=="VS" (projectGenerator.exe addons\%APPVEYOR_PROJECT_NAME%\example)
+
+- if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/msys2/install_dependencies.sh --noconfirm")
+- if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/msys2/download_libs.sh")
+- if "%BUILDER%"=="MSYS2" (copy scripts\templates\msys2\Makefile addons\%APPVEYOR_PROJECT_NAME%\example\Makefile)
+- if "%BUILDER%"=="MSYS2" (copy scripts\templates\msys2\config.make addons\%APPVEYOR_PROJECT_NAME%\example\config.make)
+
+build_script:
+- if "%BUILDER%"=="MSYS2" (%MSYS2_PATH%\usr\bin\bash -lc "make -C addons\$APPVEYOR_PROJECT_NAME\example Debug")
+
+- ps: |
+    if ($env:BUILDER -eq "VS") {
+      msbuild libs/openFrameworksCompiled/project/vs/openframeworksLib.vcxproj  /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+      msbuild addons\$APPVEYOR_PROJECT_NAME\example\example.vcxproj  /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll"
+    }
+
