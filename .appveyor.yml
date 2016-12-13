@@ -45,9 +45,9 @@ install:
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "wget http://ci.openframeworks.cc/projectGenerator/projectGenerator-vs.zip -nv")
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "unzip -qq projectGenerator-vs.zip")
 - if "%BUILDER%"=="VS" (rm projectGenerator-vs.zip)
-- if "%BUILDER%"=="VS" if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.sh %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh"
-- if "%BUILDER%"=="VS" addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat
-- if "%BUILDER%"=="VS" if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps
+- if "%BUILDER%"=="VS" if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.sh call %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh"
+- if "%BUILDER%"=="VS" if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat call addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat
+- if "%BUILDER%"=="VS" if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps call addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps
 #- addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat
 #- if "%BUILDER%"=="VS" ( set GSTREAMER_1_0_ROOT_X86_64=C:\gstreamer\1.0\x86_64\)
 #- if "%BUILDER%"=="VS" ( dir %GSTREAMER_1_0_ROOT_X86_64% )
