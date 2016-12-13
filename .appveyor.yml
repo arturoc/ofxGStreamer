@@ -48,6 +48,7 @@ install:
 - if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh" ) )
 - if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ) )
 - if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.ps ) )
+- addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat
 #- if "%BUILDER%"=="VS" ( set GSTREAMER_1_0_ROOT_X86_64=C:\gstreamer\1.0\x86_64\)
 #- if "%BUILDER%"=="VS" ( dir %GSTREAMER_1_0_ROOT_X86_64% )
 - if "%BUILDER%"=="VS" (projectGenerator.exe --verbose addons\%APPVEYOR_PROJECT_NAME%\example)
