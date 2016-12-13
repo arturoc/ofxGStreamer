@@ -92,17 +92,17 @@ msys2:
 	
 vs:
 	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include/gstreamer-1.0
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include/glib-2.0
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)lib/glib-2.0/include
-	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)lib/gstreamer-1.0/include
-	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.h
-	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.cpp
-	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.h
-	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoPlayer.cpp
-	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.h
-	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstVideoGrabber.cpp
-	ADDON_LIBS += $(GSTREAMER_1_0_ROOT_X86_64)lib/gstreamer-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gstapp-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gstvideo-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gstbase-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gstnet-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gstaudio-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gio-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/pangowin32-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/pangocairo-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gdk_pixbuf-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/pango-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/cairo.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gobject-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gmodule-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/gthread-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/ffi.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/intl.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/glib-2.0.lib
+	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include\gstreamer-1.0
+	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)include\glib-2.0
+	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)lib\glib-2.0\include
+	ADDON_INCLUDES += $(GSTREAMER_1_0_ROOT_X86_64)lib\gstreamer-1.0\include
+	ADDON_SOURCES += $(OF_ROOT)\libs\openFrameworks\video\ofGstUtils.h
+	ADDON_SOURCES += $(OF_ROOT)\libs\openFrameworks\video\ofGstUtils.cpp
+	ADDON_SOURCES += $(OF_ROOT)\libs\openFrameworks\video\ofGstVideoPlayer.h
+	ADDON_SOURCES += $(OF_ROOT)\libs\openFrameworks\video\ofGstVideoPlayer.cpp
+	ADDON_SOURCES += $(OF_ROOT)\libs\openFrameworks\video\ofGstVideoGrabber.h
+	ADDON_SOURCES += $(OF_ROOT)\libs\openFrameworks\video\ofGstVideoGrabber.cpp
+	ADDON_LIBS += $(GSTREAMER_1_0_ROOT_X86_64)lib\gstreamer-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gstapp-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gstvideo-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gstbase-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gstnet-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gstaudio-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gio-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\pangowin32-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\pangocairo-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gdk_pixbuf-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\pango-1.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\cairo.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gobject-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gmodule-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\gthread-2.0.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\ffi.lib $(GSTREAMER_1_0_ROOT_X86_64)lib\intl.lib $(GSTREAMER_1_0_ROOT_X86_64)lib/glib-2.0.lib
 	
 android/armeabi:	
 	
