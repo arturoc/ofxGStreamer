@@ -43,7 +43,7 @@ install:
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "scripts/vs/download_libs.sh --silent")
 - if "%BUILDER%"=="VS" (echo "Downloading projectGenerator from ci server")
 - if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "wget http://ci.openframeworks.cc/projectGenerator/projectGenerator-vs.zip -nv")
-- if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "unzip projectGenerator-vs.zip -qq")
+- if "%BUILDER%"=="VS" (%MSYS2_PATH%\usr\bin\bash -lc "unzip -qq projectGenerator-vs.zip")
 - if "%BUILDER%"=="VS" (rm projectGenerator-vs.zip)
 - if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.sh ( %MSYS2_PATH%\usr\bin\bash -lc "addons/%APPVEYOR_PROJECT_NAME%/scripts/ci/vs/install.sh" ) )
 - if "%BUILDER%"=="VS" ( if exist addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ( addons\%APPVEYOR_PROJECT_NAME%\scripts\ci\vs\install.bat ) )
