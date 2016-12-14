@@ -54,10 +54,10 @@ matrix:
     env: TARGET="osx" OF_BRANCH="master"
 
 # OSX
-  - os: osx
-    osx_image: xcode8
-    compiler: clang
-    env: TARGET="osx" OF_BRANCH="stable"
+#  - os: osx
+#    osx_image: xcode8
+#    compiler: clang
+#    env: TARGET="osx" OF_BRANCH="stable"
 
 # Linux ARM6, OF master: Uncomment following lines to enable 
 #  - os: linux
@@ -215,14 +215,14 @@ install:
   - cd ~/openFrameworks/libs/openFrameworksCompiled/lib/$TARGET/
   - if [ "$TARGET" == "android" ]; then
         cd armv7;
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/armv7libopenFrameworks.a;
+        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/armv7libopenFrameworksDebug.a;
         cd ../x86;
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/x86/libopenFrameworks.a;
+        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/x86/libopenFrameworksDebug.a;
         cd ..;
     elif [ "$TARGET" == "emscripten" ]; then
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/libopenFrameworks.bc;
+        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/libopenFrameworksDebug.bc;
     else
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/libopenFrameworks.a;
+        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/libopenFrameworksDebug.a;
     fi
 
 script:
