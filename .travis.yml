@@ -19,7 +19,7 @@ matrix:
   # fully specify builds, include can't dynamically expand matrix entries
   # relative order of sudo and env is important so that addons: is recognized
 
-## Linux 64bit, OF master
+# Linux 64bit, OF master
 #  - os: linux
 #    dist: trusty
 #    sudo: required
@@ -33,7 +33,7 @@ matrix:
 #          - g++-4.9
 #          - gdb
 
-## Linux 64bit, OF stable
+# Linux 64bit, OF stable:  Not supported yet
 #  - os: linux
 #    dist: trusty
 #    sudo: required
@@ -53,7 +53,7 @@ matrix:
     compiler: clang
     env: TARGET="osx" OF_BRANCH="master"
 
-# OSX
+# OSX, OF stable:  Not supported yet
 #  - os: osx
 #    osx_image: xcode8
 #    compiler: clang
@@ -66,7 +66,7 @@ matrix:
 #    env: TARGET="linuxarmv6l" OF_BRANCH="master"
 
 
-# Linux ARM6, OF stable: Uncomment following lines to enable 
+# Linux ARM6, OF stable:  Not supported yet
 #  - os: linux
 #    sudo: required
 #    dist: trusty
@@ -79,14 +79,18 @@ matrix:
 #    cache:
 #      directories:
 #        - ~/rpi2_toolchain
+#        - ~/firmware-master
+#        - ~/archlinux
 
-# Linux ARM7, OF stable: Uncomment following lines to enable 
+# Linux ARM7, OF stable:  Not supported yet
 #  - os: linux
 #    sudo: false
 #    env: TARGET="linuxarmv7l" OF_BRANCH="stable"
 #    cache:
 #      directories:
 #        - ~/rpi2_toolchain
+#        - ~/firmware-master
+#        - ~/archlinux
 
 
 # Emscripten, OF master: Uncomment following lines to enable 
@@ -101,7 +105,7 @@ matrix:
 #          - libstdc++6
 
 
-# Emscripten, OF stable: Uncomment following lines to enable 
+# Emscripten, OF stable: Not supported yet
 #  - os: linux
 #    sudo: false
 #    env: TARGET="emscripten" OF_BRANCH="stable"
@@ -150,7 +154,7 @@ matrix:
 #        - ~/android-ndk-r12b
 
 
-# Android armv7, OF stable: Uncomment following lines to enable 
+# Android armv7, OF stable: Not supported yet
 #  - os: linux
 #    sudo: false
 #    env: TARGET="android" OPT="armv7" OF_BRANCH="stable"
@@ -168,7 +172,7 @@ matrix:
 #        - ~/android-ndk-r12b
 
 
-# Android x86, OF stable: Uncomment following lines to enable 
+# Android x86, OF stable: Not supported yet
 #  - os: linux
 #    sudo: false
 #    env: TARGET="android" OPT="x86" OF_BRANCH="stable"
@@ -186,58 +190,10 @@ install:
   - cd ~
   - git clone --depth=1 --branch=$OF_BRANCH https://github.com/openframeworks/openFrameworks
   - cd openFrameworks
-  - export OF_ROOT=$PWD
-  - if [ -f scripts/ci/$TARGET/install.sh ]; then
-        scripts/ci/$TARGET/install.sh;
-    fi
-  - if [ "$OF_BRANCH" == "master" ]; then
-        if [ "$TARGET" == "linux64" ]; then
-            scripts/linux/download_libs.sh -a 64;
-        elif [ "$TARGET" == "linuxarmv6l" ]; then
-            scripts/linux/download_libs.sh -a armv6l;
-        elif [ "$TARGET" == "linuxarmv7l" ]; then
-            scripts/linux/download_libs.sh -a armv7l;
-        elif [ "$TARGET" == "tvos" ]; then
-            scripts/ios/download_libs.sh;
-        else
-            scripts/$TARGET/download_libs.sh;
-        fi
-    fi
-  - cd $TRAVIS_BUILD_DIR
-  - if [ -f scripts/ci/install.sh ]; then
-        scripts/ci/install.sh;
-    fi
-  - if [ -f scripts/ci/$TARGET/install.sh ]; then
-        scripts/ci/$TARGET/install.sh;
-    fi
-  - cd ~
-  - mv $TRAVIS_BUILD_DIR ~/openFrameworks/addons/
-  - cd ~/openFrameworks/libs/openFrameworksCompiled/lib/$TARGET/
-  - if [ "$TARGET" == "android" ]; then
-        cd armv7;
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/armv7libopenFrameworksDebug.a;
-        cd ../x86;
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/x86/libopenFrameworksDebug.a;
-        cd ..;
-    elif [ "$TARGET" == "emscripten" ]; then
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/libopenFrameworksDebug.bc;
-    else
-        wget http://ci.openframeworks.cc/openFrameworks_libs/$TARGET/libopenFrameworksDebug.a;
-    fi
+  - scripts/ci/addons/install.sh
 
 script:
-  - cd ~/openFrameworks/addons/$(basename $TRAVIS_BUILD_DIR)
-  - for example in example*; do
-        cp ~/openFrameworks/scripts/templates/$TARGET/Makefile $example/;
-        cp ~/openFrameworks/scripts/templates/$TARGET/config.make $example/;
-        cd $example;
-        if [ "$TARGET" == "android" ]; then
-            echo "ABIS_TO_COMPILE_DEBUG = $OPT" >> config.make;
-            make DebugNoOF PLATFORM_OS=Android;
-        else
-            make DebugNoOF;
-        fi
-    done
+  - scripts/ci/addons/build.sh
 
 git:
   depth: 10
