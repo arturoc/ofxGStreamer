@@ -29,9 +29,9 @@ init:
 install:
 - cd ..
 - git clone --depth=1 --branch=master https://github.com/openframeworks/openFrameworks
-- call openFrameworks/scripts/ci/addons/install.cmd
+- call openFrameworks\scripts\ci\addons\install.cmd
 
 build_script:
-- call openFrameworks/scripts/ci/addons/build.cmd
+- call openFrameworks\scripts\ci\addons\build.cmd
 
 
