@@ -20,6 +20,11 @@ environment:
 configuration: Debug
 shallow_clone: true
 clone_depth: 10
+init:
+- set MSYS2_PATH=c:\msys64
+- set CHERE_INVOKING=1
+- if "%BUILDER%_%PLATFORM%"=="MSYS2_x86" set MSYSTEM=MINGW32
+- if "%BUILDER%_%PLATFORM%"=="MSYS2_x64" set MSYSTEM=MINGW64
 
 install:
 - cd ..
