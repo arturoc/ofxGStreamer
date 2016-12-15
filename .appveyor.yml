@@ -32,7 +32,6 @@ install:
 - call openFrameworks\scripts\ci\addons\install.cmd
 
 build_script:
-- cd %OF_PATH%
-- call scripts\ci\addons\build.cmd
+- %OF_PATH%\scripts\ci\addons\build.cmd
 
 
