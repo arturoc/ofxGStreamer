@@ -25,6 +25,7 @@ init:
 - set CHERE_INVOKING=1
 - if "%BUILDER%_%PLATFORM%"=="MSYS2_x86" set MSYSTEM=MINGW32
 - if "%BUILDER%_%PLATFORM%"=="MSYS2_x64" set MSYSTEM=MINGW64
+- if "%BUILDER%" = "VS" set PATH=C:\Program Files (x86)\MSBuild\14.0\Bin;%PATH%
 
 install:
 - cd ..
