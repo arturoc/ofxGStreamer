@@ -33,6 +33,6 @@ install:
 
 build_script:
 - cd %OF_PATH%
-- call openFrameworks\scripts\ci\addons\build.cmd
+- call scripts\ci\addons\build.cmd
 
 
