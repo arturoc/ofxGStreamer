@@ -32,6 +32,7 @@ install:
 - call openFrameworks\scripts\ci\addons\install.cmd
 
 build_script:
-- call %APPVEYOR_BUILD_FOLDER%\..\openFrameworks\scripts\ci\addons\build.cmd
+- cd %OF_PATH%
+- call openFrameworks\scripts\ci\addons\build.cmd
 
 
