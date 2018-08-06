@@ -12,11 +12,11 @@ This addon has no code and instead uses the addon_config.mk file included here t
 
 The instructions below will only work with the latest version of the [project generator](https://github.com/ofZach/projectGeneratorSimple) on github. More information about getting OF setup is documented [here](https://github.com/openframeworks/openFrameworks/blob/master/docs/table_of_contents.md). Use the project generater to create template projects after you have installed the GStreamer libraries according to the instructions below.
 
-##Installing gstreamer
+## Installing gstreamer
 
 This addon depends on the gstreamer SDK. We are using version 1.0 currently. To install it:
 
-###For OSX (Tested with XCode 5, 10.6,7,8,9,10)
+### For OSX (Tested with XCode 5, 10.6,7,8,9,10)
 
 First you need to download gstreamer v1.0. To install it under osx install each of the packages described below from the [gstreamer install packages for osx](http://gstreamer.freedesktop.org/data/pkg/osx/)
     
@@ -46,7 +46,7 @@ Note: on the systems we have tested it seems it's necesary to remove or rename `
 sudo mv /Library/Frameworks/GStreamer.framework/Headers/assert.h /Library/Frameworks/GStreamer.framework/Headers/assertCOPY.h
 ```` 
 
-###For Windows (Tested in visual studio 2012, on Windows 7 & 8)
+### For Windows (Tested in visual studio 2012, on Windows 7 & 8)
 
 You need to download GStreamer v1.0. To install it under windows use the 1.2.2 packages located [http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/](http://gstreamer.freedesktop.org/data/pkg/windows/1.2.2/) any later version from [http://gstreamer.freedesktop.org/data/pkg/windows](http://gstreamer.freedesktop.org/data/pkg/windows) should work but haven't been tested yet. It is **important** to install the complete version when the installer asks, or it won't install some plugins like h264 encoder and decoder, audio input... in general everything in gstreamer bad and ugly won't be installed with the tipical installation mode.
     
