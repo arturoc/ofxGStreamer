@@ -3,7 +3,7 @@
 
 #ifdef TARGET_OSX
 void ofxGStreamerSetBundleEnvironment(){
-    string currentDir = ofFilePath::getCurrentWorkingDirectory();
+    std::string currentDir = ofFilePath::getCurrentWorkingDirectory();
     putenv(strdup(("GST_PLUGIN_SCANNER="+currentDir+"/gst-plugin-scanner").c_str()));
     putenv(strdup(("GTK_PATH="+currentDir+"/../Frameworks/GStreamer.framework/Versions/Current").c_str()));
     putenv(strdup(("GIO_EXTRA_MODULES="+currentDir+"/../Frameworks/GStreamer.framework/Versions/Current/lib/gio/modules").c_str()));
