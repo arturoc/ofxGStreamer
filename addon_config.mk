@@ -110,6 +110,7 @@ android/armeabi-v7a:
 
 osx:
 	ADDON_LDFLAGS = -F/Library/Frameworks -framework GStreamer
+	ADDON_LDFLAGS += -L/Library/Frameworks/GStreamer.framework/Libraries
 	ADDON_INCLUDES += /Library/Frameworks/GStreamer.framework/Headers
 	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.h
 	ADDON_SOURCES += $(OF_ROOT)/libs/openFrameworks/video/ofGstUtils.cpp
